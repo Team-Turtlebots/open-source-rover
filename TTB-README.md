@@ -8,7 +8,7 @@ This is Team Turtlebots' fork of [nasa-jpl/open-source-rover](https://github.com
 | --- | --- |
 | [TTB-README.md](TTB-README.md) | This file. An index of the fork's changes. |
 | [parts_list/extra_parts_shopping_list.csv](parts_list/extra_parts_shopping_list.csv) | A shopping list built from [extra_parts.md](parts_list/extra_parts.md). It has one row per purchase option, with vendor, SKU/part number, link and notes. Alternatives for the same item share an `Item #` and are lettered in the `Option` column. The `Purchased` column tracks what we've bought. |
-| [parts_list/customized_parts.md](parts_list/customized_parts.md) | Our deviations from the official build. Entry 1 covers powering the rover from **Ryobi ONE+ 18V** tool batteries instead of a 4S LiPo: compatibility check, parts, wiring, build steps, Roboclaw and rover-software settings, and a first power-up checklist. |
+| [parts_list/customized_parts.md](parts_list/customized_parts.md) | Our deviations from the official build. Entry 1 covers powering the rover from **Ryobi ONE+ 18V** tool batteries instead of a 4S LiPo: compatibility check, parts, wiring, build steps, Roboclaw and rover-software settings, and a first power-up checklist. Entries 2–5 cover the build workspace: a 24" x 80" silicone workbench mat, MotoFloor garage floor tiles, a solder fume extractor, and a 0–30V bench DC power supply. |
 
 ## Modified files
 

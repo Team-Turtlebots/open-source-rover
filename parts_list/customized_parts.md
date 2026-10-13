@@ -1,6 +1,17 @@
 # Customized Parts
 
-This page collects alternatives to the parts in the [main parts list](README.md) and the [extra parts](extra_parts.md). They are **not part of the official build** and have not been validated by the maintainers. Each entry explains what changes, why, and what you need to adjust elsewhere on the rover. Use them at your own risk.
+This page collects alternatives to the parts in the [main parts list](README.md) and the [extra parts](extra_parts.md), plus the workspace items we chose for the build. They are **not part of the official build** and have not been validated by the maintainers. Each rover entry explains what changes, why, and what you need to adjust elsewhere on the rover. Use them at your own risk.
+
+**Rover**
+
+1. [Ryobi ONE+ 18V battery power supply](#1-ryobi-one-18v-battery-power-supply)
+
+**Workspace**
+
+2. [Workbench mat: BSONEDO silicone mat, 24" x 80"](#2-workbench-mat-bsonedo-silicone-mat-24-x-80)
+3. [Floor: MotoFloor Modular Garage Flooring Tiles](#3-floor-motofloor-modular-garage-flooring-tiles)
+4. [Solder fume extractor: KOTTO Solder Smoke Absorber](#4-solder-fume-extractor-kotto-solder-smoke-absorber)
+5. [Bench DC power supply: SPS-3010, 0–30V / 0–10A](#5-bench-dc-power-supply-sps-3010)
 
 ## 1. Ryobi ONE+ 18V battery power supply
 
@@ -131,3 +142,70 @@ Alternatively, set `duty_mode: false` to use the Roboclaws' closed-loop velocity
 - [Ryobi battery repair guide](https://badar.tech/2025/08/24/ryobi-battery-repair-guide/): load detection behavior
 - [Battery low-voltage cutoff for Ryobi packs](https://hackaday.io/project/173963-battery-low-voltage-cutoff)
 - [Pololu D24V150F5](https://www.pololu.com/product/2881), [Pololu D24V22F12](https://www.pololu.com/product/2855), [RoboClaw 2x7A](https://www.pololu.com/product/3682)
+
+---
+
+# Workspace
+
+These aren't rover parts. They're what we chose to set up the build area. Prices are from the listings at the time of writing (October 2026) and may change.
+
+## 2. Workbench mat: BSONEDO silicone mat, 24" x 80"
+
+A full-length cover for a 24" x 79" desk. It protects the desktop from solder, flux, hot tools and scratches.
+
+| Item | Size | Material | Link |
+| --- | --- | --- | --- |
+| BSONEDO Large Silicone Mat, black (also translucent or dark gray) | 24" x 80" | Silicone, cuttable | [Amazon](https://www.amazon.com/clp/B0FK4NLYH1) |
+
+Notes:
+- This is the only mat found in a 24" x 80" size. It overhangs a 79" desk by 1", or you can trim it with scissors or a utility knife.
+- It's sold as a countertop/table mat. The listing doesn't give thickness or a maximum temperature, so check with the seller before relying on its heat resistance. Comparable silicone work mats are rated to about 445°F (230°C). Always put the soldering iron in its stand, never down on the mat.
+- **It is not an ESD (anti-static) mat.** Handle the PCBs, Raspberry Pi and other boards on a grounded ESD mat or with a wrist strap. ESD rubber alternatives:
+  - [RubberStat dual-layer ESD mat kit, 24" x 120"](https://www.amazon.com/clp/B0971BYTSJ), which can be cut down to 79"
+  - [Rubber ESD soldering mat, 24" x 72", with ground cable](https://www.amazon.com/Rubber-Anti-Static-Temperature-Soldering-MAT-24/dp/B07DHWZNQQ)
+
+## 3. Floor: MotoFloor Modular Garage Flooring Tiles
+
+Interlocking 1' x 1' solid-top tiles from Costco. They give the work area a durable, easy-to-clean floor where dropped screws and nuts are easy to find.
+
+| Item | Costco item # | Contents | Approx. price | Link |
+| --- | --- | --- | --- | --- |
+| MotoFloor Modular Garage Flooring Tiles (model MF48CHAR) | 2889845 | 48 click-lock tiles, 1' x 1' (48 sq ft). Colors: Charcoal, Black & White, Alloy, Black & Alloy. | $149.99 | [Costco](https://www.costco.com/MotoFloor-Modular-Garage-Flooring-Tiles-48-square-feet-per-Box-1%27-x-1%27-Tiles-.product.100009181.html) |
+| MotoFloor Modular Garage Flooring Completer Kit | 617090 | 12 tiles + 20 beveled edges, 12.7mm (1/2") thick | $82.99 | [Costco](https://www.costco.com/motofloor-modular-garage-flooring-completer-kit.product.11038311.html) |
+
+Notes:
+- **Planning:** you need one tile box per 48 sq ft of floor, rounded up. Add completer kits for the beveled edge pieces along any side that isn't against a wall. Each kit has 20 edges, which presumably covers about 20 ft of exposed edge.
+- **Don't mix with the self-draining tiles.** Costco also sells [MotoFloor Self-Draining Tiles](https://www.costco.com/motofloor-modular-self-draining-garage-floor-tiles.product.100566943.html), which are 3/4" thick and perforated. The completer kit's 1/2" edges are presumably meant for the solid modular tiles. Costco doesn't state compatibility, and it's unconfirmed whether the kit includes corner pieces.
+- Online only, with a limit of 15 boxes per member. Delivery takes about 10–15 business days.
+- The tiles snap together with no glue or fasteners. Lay them over a clean, dry floor.
+
+## 4. Solder fume extractor: KOTTO Solder Smoke Absorber
+
+A small benchtop fan with an activated-carbon filter. It pulls rosin flux smoke away from your face while you solder. This is enough for the roughly 20–30 soldering sessions the rover build takes.
+
+| Item | Specs | Approx. price | Link |
+| --- | --- | --- | --- |
+| KOTTO Solder Smoke Absorber Remover Fume Extractor | 3000 RPM fan, 0.4" activated-carbon filter, ~5 x 3 x 5 in, ~2.2 lb, 120V / 30W | $30–40 | [Amazon search](https://www.amazon.com/s?k=KOTTO+solder+smoke+absorber+fume+extractor) |
+
+Notes:
+- **Placement matters most.** Keep the intake within about 5–6 in of the joint; smoke escapes upward beyond that.
+- **Why not just an air purifier?** A room air purifier only cleans the air after the smoke has passed your face, so it doesn't replace an extractor at the joint. You can still run one, or open a window, as a supplement.
+- Rosin flux fumes are a known cause of occupational asthma. The fumes come mostly from the flux, not the lead. Wash your hands after handling leaded solder.
+- Replace the carbon filter regularly. Replacement filter packs are widely available.
+- It's carbon only. If you have asthma, use leaded solder heavily, or plan to solder much more, consider an extractor with HEPA + carbon filters, such as the [FumeClear FC-2001S](https://www.fumeclear.com/blogs/buyer-s-guide-buying-advice/how-to-choose-soldering-fume-extractor) (~$90) or a Hakko FA-400 with its HEPA add-on.
+
+## 5. Bench DC power supply: SPS-3010
+
+An adjustable bench supply with current limiting. It powers the boards for testing without a battery, as the [PCB assembly guide](../electrical/pcb/README.md#34-test-the-power-connectors) does with "14.8V DC, current limit 1.0A". It also lets you simulate the ONE+ battery's 15–21V range and check that the low-voltage cutoff trips at about 15V (see [entry 1](#1-ryobi-one-18v-battery-power-supply)).
+
+| Item | Output | Price | Link |
+| --- | --- | --- | --- |
+| DC Power Supply Variable, 0-30V 0-10A Adjustable Switching DC Regulated Bench Power Supply, model SPS-3010 (commonly sold under the Jesverty brand) | 0–30V, 0–10A, switching, with a 5V/2A USB port | about $50–90 | [Amazon search](https://www.amazon.com/s?k=SPS-3010+DC+power+supply+0-30V+0-10A), [Newegg](https://www.newegg.com/p/0FB-027H-00108) |
+
+Notes:
+- **Voltage range:** the 30V maximum covers everything the rover needs: 14.8V for the board tests, and up to ~21V for a full ONE+ pack. It doesn't reach 36V. For that you would need a 60V-class supply such as the OWON SPE6103.
+- **Display and controls:** a 4-digit display showing voltage, current and power (0.01V / 0.001A / 0.1W), with coarse and fine adjustment knobs.
+- **Constant voltage or constant current:** set the voltage and the current limit before connecting a load. The supply switches from constant-voltage to constant-current mode when the load reaches the limit. For the first power-up of an assembled board, start with a low limit such as 1.0A, as the PCB guide does.
+- **Noise:** as a switching supply, it has more output noise than a linear supply. That's fine for powering the rover's boards, motors and regulators.
+- **Check the model number:** similar-looking listings exist under several brands and model numbers. The SPS-3010M has a Type-C port, an encoder knob and an output on/off switch. The PS-3010DF is a different unit. Confirm it's the SPS-3010 before ordering.
+- **One to avoid:** the FNIRSI IPS3608 (36V/8A). In [Hackaday's write-up of an independent review](https://hackaday.com/blog/page/18/?s=protocol), the unit overheated and locked up under load, and its measured ripple was ~200mV peak-to-peak against a claimed 10mV.
