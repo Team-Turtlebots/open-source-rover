@@ -40,11 +40,11 @@ The catch is voltage. A ONE+ pack is a 5-cell (5S) Li-ion battery: about 20.5–
 | --- | --- | --- |
 | Ryobi ONE+ 18V battery, 4Ah or larger | 1+ | Genuine Ryobi only. Third-party "compatible" packs may lack protection circuitry. A 4Ah pack holds about 72Wh, which is close to a 5Ah 4S LiPo. |
 | Ryobi ONE+ charger | 1 | Charge packs off the rover. |
-| ONE+ battery adapter | 1 | Print one, e.g. the [Ryobi 18V Battery Receiver with Keystone 209 Clips](https://makerworld.com/models/2586809) (print in PETG or ABS rather than PLA), or buy a "Power Wheels" style adapter such as [this one](https://vxb.com/fr/products/power-wheels-adapter-for-ryobi-18v-one-plus-batter). Ignore the current ratings in seller listings; they are inconsistent. |
+| ONE+ battery adapter | 1 | Print one, e.g. the [Ryobi 18V Battery Receiver with Keystone 209 Clips](https://makerworld.com/models/2586809) (print in PETG or ABS rather than PLA), or buy a "Power Wheels" style adapter such as [this one](https://vxb.com/fr/products/power-wheels-adapter-for-ryobi-18v-one-plus-batter). Ignore the current ratings in seller listings; they are inconsistent. **We bought:** a "DIY battery dock / Power Wheels adapter for Ryobi 18V" on eBay (about $15–30). These often come with a 30A fuse: replace it with the 15A fuse below. Check polarity with a multimeter before connecting, and leave any built-in switch on (the board has its own main switch). |
 | Keystone 209 spring clips | 2 | Only if you print the adapter. |
 | 12–14AWG stranded wire, red and black | ~0.5m each | |
 | Inline fuse holder + 15A fuse | 1 | Goes right at the adapter. The board's 10A fuse doesn't protect the wire between the battery and the board. |
-| Low-voltage cutoff (LVC) module | 1 | See [Low-voltage cutoff](#low-voltage-cutoff). Needs at least 15A continuous, an adjustable or ~15V threshold, and low standby current. |
+| Low-voltage cutoff (LVC) module | 1 | See [Low-voltage cutoff](#low-voltage-cutoff). Needs at least 15A continuous, an adjustable or ~15V threshold, and low standby current. **We bought:** an XH-M609 on eBay; see the notes under [Low-voltage cutoff](#low-voltage-cutoff). |
 | XT30 connector (MH-FC) | 1 | Same battery-side connector as in [extra parts](extra_parts.md). |
 | Battery holder / mount | 1 | Custom or 3D printed. It must hold the pack and adapter firmly so the clips can't vibrate loose. |
 
@@ -83,6 +83,12 @@ Ryobi packs have built-in protection, but its cutoff threshold isn't published. 
 
 Options:
 - **A ready-made LVC module** rated for at least 15A, set to ~15V. Pick one with low standby current, and remove the pack when the rover is stored.
+- **XH-M609 (what we bought, from eBay).** A relay-based module with an LED voltage display. Listings give 12–36V input, a 20A relay and under 1.5W consumption; there's no manufacturer datasheet, so treat these as approximate.
+  - Set the cutoff to **15.0V** and the reconnect voltage to about **16.5–17V**, so it doesn't flicker on and off when the pack voltage recovers after cutting off.
+  - Before installing it, test it on the bench supply: lower the voltage and check it cuts off at 15.0V, then raise it and check it reconnects.
+  - The relay coil stays powered while the rover runs. That's about 80mA at 18V, roughly 10% of runtime.
+  - The display and control circuit stay on after a cutoff, so the pack keeps draining. Remove the pack after use.
+  - Read the rating printed on the relay itself (the DC rating, not the AC one). Mount the module on foam tape or standoffs to limit vibration.
 - **A DIY circuit**, e.g. this [battery low-voltage cutoff for Ryobi packs](https://hackaday.io/project/173963-battery-low-voltage-cutoff). It uses an op-amp comparator driving a MOSFET and cuts off at ~14.3V.
 
 ### Configure the Roboclaws
